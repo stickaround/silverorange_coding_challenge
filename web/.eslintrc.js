@@ -31,7 +31,6 @@ function convertOverridesToArray(overrides) {
 const newConfig = Object.assign({}, config, {
   extends: [...config.extends, 'react-app/jest', 'plugin:prettier/recommended'],
   rules: Object.assign(updateWarnRulesToErrorRules(config.rules), {
-    'react/jsx-boolean-value': ['error', 'always'],
     'react/jsx-key': 'error',
     'react/jsx-no-bind': ['error', { allowArrowFunctions: true }],
     'react/self-closing-comp': 'error',
@@ -78,17 +77,17 @@ const newConfig = Object.assign({}, config, {
             'error',
             {
               selector: ['variableLike', 'memberLike'],
-              format: ['camelCase'],
+              format: ['camelCase', 'snake_case'],
             },
             {
               selector: ['property', 'variable'],
-              format: ['camelCase', 'UPPER_CASE'],
+              format: ['camelCase', 'UPPER_CASE', 'PascalCase', 'snake_case'],
             },
             {
               selector: ['function', 'parameter'],
-              format: ['camelCase', 'PascalCase'],
+              format: ['camelCase', 'PascalCase', 'snake_case'],
             },
-            { selector: 'typeLike', format: ['PascalCase'] },
+            { selector: 'typeLike', format: ['PascalCase', 'snake_case'] },
           ],
           '@typescript-eslint/explicit-member-accessibility': [
             'error',
