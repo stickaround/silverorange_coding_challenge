@@ -77,17 +77,17 @@ const newConfig = Object.assign({}, config, {
             'error',
             {
               selector: ['variableLike', 'memberLike'],
-              format: ['camelCase'],
+              format: ['camelCase', 'snake_case'],
             },
             {
               selector: ['property', 'variable'],
-              format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+              format: ['camelCase', 'UPPER_CASE', 'PascalCase', 'snake_case'],
             },
             {
               selector: ['function', 'parameter'],
-              format: ['camelCase', 'PascalCase'],
+              format: ['camelCase', 'PascalCase', 'snake_case'],
             },
-            { selector: 'typeLike', format: ['PascalCase'] },
+            { selector: 'typeLike', format: ['PascalCase', 'snake_case'] },
           ],
           '@typescript-eslint/explicit-member-accessibility': [
             'error',
