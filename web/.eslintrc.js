@@ -31,7 +31,6 @@ function convertOverridesToArray(overrides) {
 const newConfig = Object.assign({}, config, {
   extends: [...config.extends, 'react-app/jest', 'plugin:prettier/recommended'],
   rules: Object.assign(updateWarnRulesToErrorRules(config.rules), {
-    'react/jsx-boolean-value': ['error', 'always'],
     'react/jsx-key': 'error',
     'react/jsx-no-bind': ['error', { allowArrowFunctions: true }],
     'react/self-closing-comp': 'error',
@@ -82,7 +81,7 @@ const newConfig = Object.assign({}, config, {
             },
             {
               selector: ['property', 'variable'],
-              format: ['camelCase', 'UPPER_CASE'],
+              format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
             },
             {
               selector: ['function', 'parameter'],
