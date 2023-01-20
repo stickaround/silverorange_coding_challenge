@@ -18,6 +18,23 @@ export interface User {
   site_admin: boolean;
 }
 
+export interface Commit {
+  sha: string;
+  commit: {
+    message: string;
+    author: {
+      name: string;
+      email: string;
+      date: string;
+    };
+  };
+  author: {
+    login: string;
+    avatar_url: string;
+    url: string;
+  };
+}
+
 export interface Repository {
   id: number;
   name: string;
@@ -43,5 +60,7 @@ export interface Repository {
   forks_count: number;
   forks: number;
   commits_url: string;
+  commits?: Commit[];
+  readMe?: string;
   default_branch: string;
 }

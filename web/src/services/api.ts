@@ -6,6 +6,7 @@ const api = axios.create({
   baseURL: process.env.API_URL ?? 'http://localhost:4000',
 });
 
-export const getRepositories = () => api.get<Repository[]>('/repos');
-export const getRepository = (repository_id: number) =>
-  api.get<Repository>(`/repos/${repository_id}`);
+export const getRepositories = (language = '') =>
+  api.get<Repository[]>(`/repos?language=${language}`);
+export const getRepository = (repositoryName: string) =>
+  api.get<Repository>(`/repos/${repositoryName}`);
